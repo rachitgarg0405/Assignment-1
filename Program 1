@@ -1,0 +1,31 @@
+#packageexample/src/app/main.java
+package app;
+
+import java.util.Scanner;
+import utilities.MathUtils;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        MathUtils math = new MathUtils();
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();
+
+        int sum = math.add(num1, num2);
+        System.out.println("Sum: " + sum);
+
+        sc.close();
+    }
+}
+#packagexample/src/utilities/Mathutils.java
+package utilities;
+
+public class MathUtils {
+    public int add(int a, int b) {
+        return a + b;
+    }
+}
