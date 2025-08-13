@@ -1,0 +1,58 @@
+//src/shapes/Circle.java
+package shapes;
+
+public interface Shape {
+    double area();
+    double perimeter();
+}
+//src/shapes/Rectangle.java
+package shapes;
+
+public interface Shape {
+    double area();
+    double perimeter();
+}
+//src/shapes/Shape.java
+package shapes;
+
+public interface Shape {
+    double area();
+    double perimeter();
+}
+//src/apps/Main.java
+package apps;
+
+import java.util.Scanner;
+import shapes.Circle;
+import shapes.Rectangle;
+import shapes.Shape;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Choose a shape (1 = Circle, 2 = Rectangle): ");
+        int choice = sc.nextInt();
+
+        Shape shape = null;
+
+        if (choice == 1) {
+            System.out.print("Enter radius of circle: ");
+            double radius = sc.nextDouble();
+            shape = new Circle(radius);
+        } else if (choice == 2) {
+            System.out.print("Enter length of rectangle: ");
+            double length = sc.nextDouble();
+            System.out.print("Enter width of rectangle: ");
+            double width = sc.nextDouble();
+            shape = new Rectangle(length, width);
+        } else {
+            System.out.println("Invalid choice!");
+            sc.close();
+            return;
+        }
+        // Display results
+        System.out.println("Area: " + shape.area());
+        System.out.println("Perimeter: " + shape.perimeter());
+    }
+}
