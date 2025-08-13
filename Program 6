@@ -1,0 +1,22 @@
+package apps;
+import java.util.Scanner;
+@FunctionalInterface
+interface SquareCalculator {
+    int calculate(int num);
+}
+public class SquareFinder {
+    public static int findSquare(int num) {
+        return num * num;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+        SquareCalculator calculator = SquareFinder::findSquare;
+        int square = calculator.calculate(number);
+        System.out.println("Square of " + number + " is: " + square);
+
+        sc.close();
+    }
+}
