@@ -1,0 +1,23 @@
+package apps;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of strings: ");
+        int n = sc.nextInt();
+        sc.nextLine(); // consume newline
+        ArrayList<String> strings = new ArrayList<>();
+        System.out.println("Enter the strings:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("String " + (i + 1) + ": ");
+            strings.add(sc.nextLine());
+        }
+        Collections.sort(strings, (s1, s2) -> s2.compareToIgnoreCase(s1));
+        System.out.println("\nStrings in descending order:");
+        for (String s : strings) {
+            System.out.println(s);
+        }
+    }
+}
